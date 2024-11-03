@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - diagram_branch
     paths-ignore:
       - 'README.md'
 
