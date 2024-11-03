@@ -43,7 +43,36 @@ class TestWeatherService(unittest.TestCase):
     @patch.dict(os.environ, {"OPENWEATHER_API_KEY": "fake_api_key"})
     @patch('weather_api.utils.requests.Session.get')
     def test_get_weather_data_success(self, mock_get):
-        pass
+        """
+        Test get_weather_data method in WeatherService with successful API calls for coordinates and weather data.
+        
+        This test:
+        - Mocks the environment with a fake API key.
+        - Mocks two successive API calls using side_effect to simulate chained API responses:
+            1. First call returns coordinates (lat, lon).
+            2. Second call returns weather information.
+        - Verifies that get_weather_data correctly retrieves and returns the weather data.
+        """
+        
+        # Set up mock responses for two successive API calls using side_effect
+        mock_get.side_effect = [
+            MagicMock(json=lambda: {"lat": 40.7128, "lon": -74.0060}),  # First call for coordinates
+            MagicMock(json=lambda: {
+                "weather": [{"main": "Clear", "description": "clear sky"}],
+                "main": {"temp": 293.15, "feels_like": 292.15, "temp_min": 291.15, "temp_max": 294.15}
+            })  # Second call for weather data with expected "main" structure
+        ]
+
+        # Initialize the WeatherService with the mocked API key
+        service = WeatherService()
+
+        # Call get_weather_data and retrieve the weather information
+        weather_data = service.get_weather_data("10001")
+        
+        # Assert that the temperature conversion to Fahrenheit was applied
+        self.assertAlmostEqual(weather_data["main"]["temp"], 68.0, places=1)  # Converted from Kelvin
+        self.assertEqual(weather_data["weather"][0]["main"], "Clear")
+
 
 
 # Run the test suite
