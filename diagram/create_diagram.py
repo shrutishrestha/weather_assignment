@@ -54,7 +54,7 @@ def create_mermaid_diagram(data: dict, file_path="output.html") -> str:
         "<head><script type=\"module\" src=\"https://unpkg.com/mermaid@9.1.1/dist/mermaid.esm.min.mjs\"></script></head>\n"
         "<body>\n"
         "<div class=\"mermaid\">\n"
-        "{mermaid_code_str}\n"
+        f"{mermaid_code_str}\n"
         "</div>\n"
         "</body>\n"
         "</html>\n"
