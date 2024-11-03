@@ -236,7 +236,7 @@ I did this project in mac os, and couldn't test in windows environment. However,
 - Integrated GitHub Actions for automated testing on each push and pull request. This continuous integration approach helps catch issues early by running all tests automatically, making sure that new code changes do not break existing functionality.
 
 
-Handling errors example:
+## Handling errors example:
 
 1. Passing "anasd" in place of zip code
 ```
