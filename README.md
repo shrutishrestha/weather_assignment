@@ -1,9 +1,22 @@
 # weather_assignment
 
-## Goal
+### Content:
+1. Goal
+2. Core Requirements
+3. Additional Requirements
+4. Architecture Diagram
+5. Project Overview
+6. Project Structure
+7. Setup Instructions
+8. Output
+9. Fulfilled requirements
+10. Handling errors example
+
+
+## 1. Goal
 To get weather according to zip code provided.
 
-## Core Requirements
+## 2. Core Requirements
 1. To expose an API server with one endpoint that will calculate and respond with the weather forecast for today in Fahrenheit 
 2. Create a Graph Diagram programmatically which creates an HTML (output.html) with a [Mermaid JS].
 3. Use GitHub Actions package to create a wheel file and test the weather_api code then publish the code coverage results as an HTML report
@@ -13,7 +26,7 @@ To get weather according to zip code provided.
    - create the output.html diagram and optionally open it
 
 
-## Additional Requirements
+## 3. Additional Requirements
 1. Maintainability (code organization and structure) User Experience
 2. Data Validation
 3. Security (API key management)
@@ -22,7 +35,7 @@ To get weather according to zip code provided.
 6. Python modern stack
 
 
-## Architecture Diagram
+## 4. Architecture Diagram
 <img src="architecure_weather_api.png"></img>
 
 Explanation of Each Component in the Diagram
@@ -42,7 +55,7 @@ Explanation of Each Component in the Diagram
    2. Provides the file path to the Flask app to include in the response back to the user.
 
 
-## Project Overview
+## 5. Project Overview
 This project provides a simple weather API service that:
 
 - Retrieves weather information based on a provided ZIP code.
@@ -50,7 +63,7 @@ This project provides a simple weather API service that:
 - Includes unit tests for each module to ensure code accuracy and functionality.
 
 
-## Project Structure
+## 6. Project Structure
 
 
 ### Directory and File Descriptions
@@ -89,7 +102,9 @@ This project provides a simple weather API service that:
 - **setup.py**: Script to package and distribute the project.
 
 
-## Setup Instructions
+## 7. Setup Instructions
+
+#### Note: I did this project in mac os, and couldn't test in windows environment. However, I have provided instructions to run in windows.
 
 
 1. Clone the repository:
@@ -157,7 +172,7 @@ PYTHONPATH=. pytest tests
 ```
 
 
-## Output
+## 8. Output
 ```
 python weather_api/cli.py 30346
 Weather data: {'current_temperature': 63.72, 'saved_file_path': 'output.html'}
@@ -171,12 +186,7 @@ Type yes
 <img src="artifacts.png"></img>
 
 
-## Note
-I did this project in mac os, and couldn't test in windows environment. However, I have provided instructions to run in windows.
-
-
-
-## Fulfilled requirements
+## 9. Fulfilled requirements
 
 ### Data Validation
 
@@ -236,7 +246,7 @@ I did this project in mac os, and couldn't test in windows environment. However,
 - Integrated GitHub Actions for automated testing on each push and pull request. This continuous integration approach helps catch issues early by running all tests automatically, making sure that new code changes do not break existing functionality.
 
 
-## Handling errors example:
+## 10. Handling errors example:
 
 1. Passing "anasd" in place of zip code
 ```
@@ -265,3 +275,15 @@ python weather_api/cli.py
 usage: cli.py [-h] zip_code
 cli.py: error: the following arguments are required: zip_code
 ```
+
+5. Not providing OPENWEATHER_API_KEY
+In .env
+```
+OPENWEATHER_API_KEY=""
+```
+Execute cli.py
+```
+python weather_api/cli.py 30346            
+Error: Internal server error. Please check the API key configuration or server logs.
+```
+
