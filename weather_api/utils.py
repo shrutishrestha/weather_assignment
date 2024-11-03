@@ -15,3 +15,15 @@ class WeatherService:
         if not self.api_key:
             raise EnvironmentError("API key for OPENWEATHER_API_KEY is not set in environment variables.")
         self.session = requests.Session()
+
+    def change_kelvin_to_farhenheit(self, kelvin: float) -> float:
+        """
+        Convert temperature in Kelvin to Fahrenheit.
+        
+        Args:
+            kelvin (float): Temperature in Kelvin.
+
+        Returns:
+            float: Temperature in Fahrenheit.
+        """
+        return (kelvin - 273.15) * 9/5 + 32
