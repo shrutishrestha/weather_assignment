@@ -27,3 +27,24 @@ class WeatherService:
             float: Temperature in Fahrenheit.
         """
         return (kelvin - 273.15) * 9/5 + 32
+    
+    def get_coordinates(self, zip_code: str) -> Tuple[float, float]:
+        """
+        Get latitude and longitude coordinates for a given ZIP code.
+        
+        Args:
+            zip_code (str): ZIP code of the location.
+
+        Returns:
+            Tuple[float, float]: Latitude and longitude.
+        
+        Raises:
+            HTTPError: If the API call fails.
+            KeyError: If the response data is missing expected keys.
+        """
+        url = f"http://api.openweathermap.org/geo/1.0/zip?zip={zip_code}&appid={self.api_key}"
+        response = self.session.get(url)
+        response.raise_for_status()
+        
+        data = response.json()
+        return data["lat"], data["lon"]
