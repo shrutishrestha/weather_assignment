@@ -34,10 +34,10 @@ jobs:
 
       - name: Run Tests and coverage
         env:
-            OPENWEATHER_API_KEY: ${{ secrets.OPENWEATHERMAP_API_KEY }}
+            OPENWEATHER_API_KEY: ${{ secrets.OPENWEATHER_API_KEY }}
         run: |
             if [ -n "$OPENWEATHER_API_KEY" ]; then
-                echo "API Key is set and has a length of ${#OPENWEATHERMAP_API_KEY} characters."
+                echo "API Key is set and has a length of ${#OPENWEATHER_API_KEY} characters."
             else
                 echo "API Key is not set."
             fi
