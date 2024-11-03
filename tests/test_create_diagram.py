@@ -36,3 +36,7 @@ class TestCreateDiagram(unittest.TestCase):
 
         # Remove the generated file after test completion to keep the test environment clean
         os.remove(file_path)
+
+# Run the test suite
+if __name__ == '__main__':
+    unittest.main()
