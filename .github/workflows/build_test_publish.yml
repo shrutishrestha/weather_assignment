@@ -7,7 +7,10 @@ on:
       - diagram_branch
       - feature/*
     paths-ignore:
-      - 'README.md'
+      - '*.md'
+      - '*.yml'
+      - '*.png'
+      - '*.html'
 
   workflow_dispatch:
 jobs:
