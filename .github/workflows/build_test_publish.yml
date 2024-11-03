@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - diagram_branch
+      - feature/*
     paths-ignore:
       - 'README.md'
 
