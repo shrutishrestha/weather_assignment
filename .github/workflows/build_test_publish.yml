@@ -44,3 +44,24 @@ jobs:
             source .venv/bin/activate
             mkdir -p coverage_html_report
             coverage run -m pytest tests
+            coverage html -d coverage_html_report
+
+            - name: Upload coverage report
+              uses: actions/upload-artifact@v3
+              with:
+                name: coverage-html-report
+                path: coverage_html_report
+      
+    
+            - name: Display Coverage Report Summary
+              run: |
+                source .venv/bin/activate
+                coverage report
+      
+            - name: Upload wheel file
+              uses: actions/upload-artifact@v3
+              with:
+                name: weather_api_wheel
+                path: dist/*.whl
+      
+      
