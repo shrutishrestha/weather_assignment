@@ -91,4 +91,4 @@ class WeatherService:
 
         self.weather_data = weather_data
         
-        return weather_data
+        return self.weather_data
