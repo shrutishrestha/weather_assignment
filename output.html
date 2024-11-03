@@ -1,0 +1,73 @@
+<html>
+<head><script type="module" src="https://unpkg.com/mermaid@9.1.1/dist/mermaid.esm.min.mjs"></script></head>
+<body>
+<div class="mermaid">
+graph TD
+data --> coord
+coord --> coord_lon
+coord_lon --> coord_lon_value[-74.006]
+coord --> coord_lat
+coord_lat --> coord_lat_value[40.7128]
+data --> weather
+weather --> weather_0
+weather_0 --> weather_0_id
+weather_0_id --> weather_0_id_value[800]
+weather_0 --> weather_0_main
+weather_0_main --> weather_0_main_value[Clear]
+weather_0 --> weather_0_description
+weather_0_description --> weather_0_description_value[clear sky]
+weather_0 --> weather_0_icon
+weather_0_icon --> weather_0_icon_value[01d]
+data --> base
+base --> base_value[stations]
+data --> main
+main --> main_temp
+main_temp --> main_temp_value[289.5]
+main --> main_feels_like
+main_feels_like --> main_feels_like_value[287.8]
+main --> main_temp_min
+main_temp_min --> main_temp_min_value[288.7]
+main --> main_temp_max
+main_temp_max --> main_temp_max_value[290.4]
+main --> main_pressure
+main_pressure --> main_pressure_value[1013]
+main --> main_humidity
+main_humidity --> main_humidity_value[50]
+main --> main_sea_level
+main_sea_level --> main_sea_level_value[None]
+main --> main_grnd_level
+main_grnd_level --> main_grnd_level_value[None]
+data --> visibility
+visibility --> visibility_value[10000]
+data --> wind
+wind --> wind_speed
+wind_speed --> wind_speed_value[4.1]
+wind --> wind_deg
+wind_deg --> wind_deg_value[80]
+data --> clouds
+clouds --> clouds_all
+clouds_all --> clouds_all_value[0]
+data --> dt
+dt --> dt_value[1605182400]
+data --> sys
+sys --> sys_type
+sys_type --> sys_type_value[1]
+sys --> sys_id
+sys_id --> sys_id_value[1414]
+sys --> sys_country
+sys_country --> sys_country_value[US]
+sys --> sys_sunrise
+sys_sunrise --> sys_sunrise_value[1605169985]
+sys --> sys_sunset
+sys_sunset --> sys_sunset_value[1605206585]
+data --> timezone
+timezone --> timezone_value[-18000]
+data --> id
+id --> id_value[5128581]
+data --> name
+name --> name_value[New York]
+data --> cod
+cod --> cod_value[200]
+</div>
+</body>
+</html>
