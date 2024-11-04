@@ -109,8 +109,8 @@ This project provides a simple weather API service that:
 
 1. Clone the repository:
 ```
-git clone https://github.com/your-username/your-repo.git
-cd your-repo
+git clone https://github.com/shrutishrestha/weather_assignment.git
+cd weather_assignment
 ```
 
 2. Create a virtual environment and activate it: </br>
